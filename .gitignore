@@ -28,6 +28,7 @@ package-lock.json
 node_modules/
 
 # Spring
+spring.log*
 HELP.md
 target/
 !.mvn/wrapper/maven-wrapper.jar
