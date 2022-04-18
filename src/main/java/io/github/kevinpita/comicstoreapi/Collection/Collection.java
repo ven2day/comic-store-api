@@ -24,6 +24,7 @@ public class Collection {
 
     private String description;
 
+    @Column(nullable = false)
     private String publisher;
 
     @OneToMany(mappedBy = "collection", fetch = FetchType.LAZY)
