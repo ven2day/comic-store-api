@@ -1,7 +1,7 @@
-package io.github.kevinpita.comicstoreapi.Comic;
+package io.github.kevinpita.comicstoreapi.comic;
 
-import io.github.kevinpita.comicstoreapi.Collection.Collection;
-import io.github.kevinpita.comicstoreapi.ComicCreator.ComicCreator;
+import io.github.kevinpita.comicstoreapi.collection.Collection;
+import io.github.kevinpita.comicstoreapi.comiccreator.ComicCreator;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;

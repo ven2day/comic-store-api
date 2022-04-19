@@ -1,8 +1,9 @@
-package io.github.kevinpita.comicstoreapi.Collection;
+package io.github.kevinpita.comicstoreapi.collection;
 
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import javax.validation.Valid;
 
 @RestController
 @RequestMapping("/api/v1/collection")
@@ -20,12 +21,12 @@ public class CollectionController {
 
     // get by id
     @GetMapping("/{id}")
-    public Collection getCollection(@PathVariable Long id) {
+    public Collection getCollection(@Valid @PathVariable Long id) {
         return collectionService.getCollection(id);
     }
 
     @PostMapping
-    public Collection createCollection(Collection collection) {
+    public Collection createCollection(@Valid Collection collection) {
         return collectionService.createCollection(collection);
     }
 }

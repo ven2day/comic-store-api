@@ -1,12 +1,13 @@
-package io.github.kevinpita.comicstoreapi.Collection;
+package io.github.kevinpita.comicstoreapi.collection;
 
-import io.github.kevinpita.comicstoreapi.Comic.Comic;
+import io.github.kevinpita.comicstoreapi.comic.Comic;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotBlank;
 import java.util.List;
 
 @AllArgsConstructor
@@ -20,11 +21,12 @@ public class Collection {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @NotBlank
     private String name;
 
     private String description;
 
-    @Column(nullable = false)
+    @NotBlank
     private String publisher;
 
     @OneToMany(mappedBy = "collection", fetch = FetchType.LAZY)

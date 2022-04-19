@@ -1,4 +1,4 @@
-package io.github.kevinpita.comicstoreapi.Comic;
+package io.github.kevinpita.comicstoreapi.comic;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 

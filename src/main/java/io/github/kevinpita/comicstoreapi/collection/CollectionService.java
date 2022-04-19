@@ -1,4 +1,4 @@
-package io.github.kevinpita.comicstoreapi.Collection;
+package io.github.kevinpita.comicstoreapi.collection;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;

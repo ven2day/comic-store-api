@@ -1,7 +1,7 @@
-package io.github.kevinpita.comicstoreapi.Configuration;
+package io.github.kevinpita.comicstoreapi.configuration;
 
-import io.github.kevinpita.comicstoreapi.Collection.Collection;
-import io.github.kevinpita.comicstoreapi.Collection.CollectionRepository;
+import io.github.kevinpita.comicstoreapi.collection.Collection;
+import io.github.kevinpita.comicstoreapi.collection.CollectionRepository;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
