@@ -1,13 +1,9 @@
 /* Kevin Pita 2022 */
 package io.github.kevinpita.comicstoreapi.creator;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
-import javax.persistence.UniqueConstraint;
+import io.github.kevinpita.comicstoreapi.comiccreator.ComicCreator;
+import java.util.List;
+import javax.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -30,4 +26,7 @@ public class Creator {
 
     @Column(name = "full_name")
     private String fullName;
+
+    @OneToMany(mappedBy = "creator", fetch = FetchType.LAZY)
+    private List<ComicCreator> comicCreators;
 }
