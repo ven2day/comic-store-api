@@ -5,17 +5,7 @@ import io.github.kevinpita.comicstoreapi.collection.Collection;
 import io.github.kevinpita.comicstoreapi.comiccopy.ComicCopy;
 import io.github.kevinpita.comicstoreapi.comiccreator.ComicCreator;
 import java.util.List;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.FetchType;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
-import javax.persistence.Table;
-import javax.persistence.UniqueConstraint;
+import javax.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -30,7 +20,7 @@ import lombok.Setter;
         name = "comic",
         uniqueConstraints = {
             @UniqueConstraint(
-                    name = "comic_collection_issue_number_unique",
+                    name = "uq_comic_collection_issue_number",
                     columnNames = {"collection_id", "issue_number"})
         })
 public class Comic {
@@ -46,7 +36,7 @@ public class Comic {
     private int issueNumber;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "collection_id")
+    @JoinColumn(name = "collection_id", foreignKey = @ForeignKey(name = "fk_comic_collection"))
     private Collection collection;
 
     @OneToMany(mappedBy = "comic", fetch = FetchType.LAZY)

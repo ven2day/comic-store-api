@@ -24,9 +24,7 @@ import lombok.Setter;
 @Entity
 @Table(
         name = "collection",
-        uniqueConstraints = {
-            @UniqueConstraint(name = "collection_name_unique", columnNames = "name")
-        })
+        uniqueConstraints = {@UniqueConstraint(name = "uq_collection_name", columnNames = "name")})
 public class Collection {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

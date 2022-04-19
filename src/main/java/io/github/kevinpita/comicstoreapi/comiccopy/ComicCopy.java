@@ -28,6 +28,6 @@ public class ComicCopy {
     private BigDecimal price;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "comic_id")
+    @JoinColumn(name = "comic_id", foreignKey = @ForeignKey(name = "fk_comic_copy_comic"))
     private Comic comic;
 }

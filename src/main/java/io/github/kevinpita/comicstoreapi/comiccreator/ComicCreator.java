@@ -26,7 +26,7 @@ import lombok.Setter;
         name = "comic_creator",
         uniqueConstraints = {
             @UniqueConstraint(
-                    name = "comic_creator_role_creator_comic_unique",
+                    name = "uq_comic_creator_role_creator_comic",
                     columnNames = {"role", "creator_id", "comic_id"})
         })
 public class ComicCreator {
@@ -35,11 +35,15 @@ public class ComicCreator {
     private Long id;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "comic_id")
+    @JoinColumn(
+            name = "comic_id",
+            foreignKey = @javax.persistence.ForeignKey(name = "fk_comic_creator_comic_id"))
     private Comic comic;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "creator_id")
+    @JoinColumn(
+            name = "creator_id",
+            foreignKey = @javax.persistence.ForeignKey(name = "fk_comic_creator_creator_id"))
     private Creator creator;
 
     private String role;

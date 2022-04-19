@@ -17,7 +17,7 @@ import lombok.Setter;
 @Table(
         name = "creator",
         uniqueConstraints = {
-            @UniqueConstraint(name = "creator_full_name_unique", columnNames = "full_name")
+            @UniqueConstraint(name = "uq_creator_full_name", columnNames = "full_name")
         })
 public class Creator {
     @Id
